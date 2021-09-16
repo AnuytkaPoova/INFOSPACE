@@ -35,4 +35,5 @@
     <string name="horizontal">horizontal</string>
     <string name="scroll">scroll</string>
     <string name="close_icon_listener">Close Icon Listener</string>
+    <string name="text_under_foto">приходит с сервера</string>
 </resources>

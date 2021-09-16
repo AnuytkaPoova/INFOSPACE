@@ -26,9 +26,7 @@ class ChipsFragment : Fragment() {
             chipGroup.findViewById<Chip>(position)?.let {
                 Toast.makeText(context, "Выбран ${it.text}", Toast.LENGTH_SHORT).show()
             }
-
-
-    }
+        }
     chip_close.setOnCloseIconClickListener {
         Toast.makeText(
                 context,
@@ -36,6 +34,5 @@ class ChipsFragment : Fragment() {
                 Toast.LENGTH_SHORT
         ).show()
     }
-
     }
 }
