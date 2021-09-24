@@ -4,6 +4,10 @@
     <string name="app_name">INFOSPACE</string>
     <string name="photo_of_the_day_stub">Photo of the day</string>
 
+    <string name="api">api</string>
+
+
+
     <!-- TODO: Main_activity -->
     <string name="search_wiki">Найти в Википедии</string>
     <string name="wiki_helper_text">Поищите термин в википедии</string>
@@ -42,7 +46,7 @@
     <string name="horizontal">horizontal</string>
     <string name="scroll">scroll</string>
     <string name="close_icon_listener">Close Icon Listener</string>
-
+    <string name="telescope">telescope</string>
 
 
 </resources>

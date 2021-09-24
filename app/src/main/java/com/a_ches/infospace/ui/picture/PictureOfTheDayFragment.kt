@@ -15,8 +15,10 @@ import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.a_ches.infospace.R
 import com.a_ches.infospace.ui.MainActivity
-import com.a_ches.infospace.ui.chips.ChipsFragment
-import kotlinx.android.synthetic.main.main_fragment.*
+import com.a_ches.infospace.ui.api.ApiActivity
+import com.a_ches.infospace.ui.apibottom.ApiBottomActivity
+import com.a_ches.infospace.ui.settings.SettingsFragment
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class PictureOfTheDayFragment : Fragment() {
 
@@ -36,7 +38,7 @@ class PictureOfTheDayFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,17 +54,20 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_bottom_bar, menu)
 
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> toast("Favorite")
-            R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()?.add(R.id.container, ChipsFragment())?.addToBackStack(null)?.commit()
+            R.id.app_bar_fav -> activity?.let { startActivity(Intent(it, ApiBottomActivity::class.java)) }
+            R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()
+                    ?.add(R.id.container, SettingsFragment())?.addToBackStack(null)?.commit()
             android.R.id.home -> {
                 activity?.let {
                     BottomNavigationDrawerFragment().show(it.supportFragmentManager, "tag")
                 }
             }
+            R.id.app_bar_api -> activity?.let { startActivity(Intent(it, ApiActivity::class.java)) }
         }
          return super.onOptionsItemSelected(item)
     }
