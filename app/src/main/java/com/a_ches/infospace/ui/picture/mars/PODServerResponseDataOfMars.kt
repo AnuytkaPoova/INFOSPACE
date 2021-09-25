@@ -1,8 +1,8 @@
-package com.a_ches.infospace.ui.picture
+package com.a_ches.infospace.ui.picture.mars
 
 import com.google.gson.annotations.SerializedName
 
-data class PODServerResponseData (
+data class PODServerResponseDataOfMars (
 
     @field:SerializedName("copyright") val copyright: String?,
     @field:SerializedName("date") val date: String?,

@@ -1,4 +1,4 @@
-package com.a_ches.infospace.ui.picture
+package com.a_ches.infospace.ui.picture.ofday
 
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
@@ -7,7 +7,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
-
 
 class PODRetrofitImpl {
 

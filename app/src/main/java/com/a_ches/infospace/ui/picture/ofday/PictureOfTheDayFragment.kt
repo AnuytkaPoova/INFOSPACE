@@ -1,4 +1,4 @@
-package com.a_ches.infospace.ui.picture
+package com.a_ches.infospace.ui.picture.ofday
 
 import android.content.Intent
 import android.net.Uri
@@ -17,6 +17,7 @@ import com.a_ches.infospace.R
 import com.a_ches.infospace.ui.MainActivity
 import com.a_ches.infospace.ui.api.ApiActivity
 import com.a_ches.infospace.ui.apibottom.ApiBottomActivity
+import com.a_ches.infospace.ui.picture.BottomNavigationDrawerFragment
 import com.a_ches.infospace.ui.settings.SettingsFragment
 import kotlinx.android.synthetic.main.fragment_main.*
 

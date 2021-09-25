@@ -1,4 +1,4 @@
-package com.a_ches.infospace.ui.picture
+package com.a_ches.infospace.ui.picture.ofday
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,8 +9,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PictureOfTheDayViewModel (
-    private val liveDataForViewToObserver: MutableLiveData<PictureOfTheDayData> = MutableLiveData(),
-    private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()
+        private val liveDataForViewToObserver: MutableLiveData<PictureOfTheDayData> = MutableLiveData(),
+        private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()
     ) :
     ViewModel() {
         fun getData(): LiveData<PictureOfTheDayData> {

@@ -1,4 +1,4 @@
-package com.a_ches.infospace.ui.picture
+package com.a_ches.infospace.ui.picture.ofday
 
 
 import retrofit2.Call
@@ -10,5 +10,9 @@ interface PictureOfTheDayAPI {
 
     @GET("planetary/apod")
     fun getPictureOfTheDay(@Query("api_key") apiKey: String): Call<PODServerResponseData>
+
+
 }
+
+
 
