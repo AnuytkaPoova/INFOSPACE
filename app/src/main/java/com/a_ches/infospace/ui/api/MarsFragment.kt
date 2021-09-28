@@ -38,24 +38,26 @@ class MarsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_mars, container, false) //
     }
 
-    private fun renderData(data: PictureOfTheMarsData?) { //PictureOfTheDayData
-        when(data) {
+     private fun renderData(data: PictureOfTheMarsData) { //PictureOfTheDayData
+        when (data) {
             is PictureOfTheMarsData.Success -> { //PictureOfTheDayData
                 val serverResponseData2 = data.serverResponseData2
-                val url = serverResponseData2.url
+                val url = serverResponseData2.photos?.get(0)?.imgSrc
                 if (url.isNullOrEmpty()) {
                     //showError("Сообщение, что ссылка пустая")
                     toast("Link is empty")
                 } else {
                     //showSuccess()
-                    image_view_mars.load(url) {
+                    println(url)
+                    val respImage = image_view_mars.load(url) {
                         lifecycle(this@MarsFragment)
                         error(R.drawable.ic_load_error_vector)
                         placeholder(R.drawable.ic_no_photo_vector)
                     }
+                    println()
                 }
             }
-            is   PictureOfTheMarsData.Loading -> { //PictureOfTheDayData
+            is PictureOfTheMarsData.Loading -> { //PictureOfTheDayData
                 //showLoading()
             }
             is PictureOfTheMarsData.Error -> { //PictureOfTheDayData
