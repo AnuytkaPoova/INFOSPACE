@@ -4,6 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/drawable/ic_load_error_vector.xml" value="0.16145833333333334" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/layout/activity_api_bottom.xml" value="0.1046875" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/layout/activity_api_custom_tab_mars.xml" value="0.1046875" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/layout/activity_main.xml" value="0.1046875" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.1046875" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/layout/fragment_earth.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/layout/fragment_mars.xml" value="0.16" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/layout/fragment_photo_from_mars.xml" value="0.136" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/layout/fragment_settings.xml" value="0.1046875" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/layout/fragment_weather.xml" value="0.1046875" />
+        <entry key="..\:/Users/a_che/AndroidStudioProjects/INFOSPACE/app/src/main/res/xml/network_security_config.xml" value="0.21965579710144928" />
       </map>
     </option>
   </component>
