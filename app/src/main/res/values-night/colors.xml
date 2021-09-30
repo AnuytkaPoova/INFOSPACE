@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <color name="color_background_white_deep_blue">@color/color_deep_blue</color>
+</resources>
