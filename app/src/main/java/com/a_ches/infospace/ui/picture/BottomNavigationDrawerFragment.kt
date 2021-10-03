@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.a_ches.infospace.R
-import com.a_ches.infospace.ui.animations.AnimationsActivity
-import com.a_ches.infospace.ui.animations.AnimationsActivityBonus
+import com.a_ches.infospace.ui.animations.*
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
 
@@ -43,6 +42,48 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                         )
                     )
                 }
+                R.id.navigation_three -> activity?.let {
+                    startActivity(
+                        Intent(
+                            it,
+                            AnimationsActivityTransitions::class.java
+                        )
+                    )
+                }
+                R.id.navigation_four -> activity?.let {
+                    startActivity(
+                        Intent(
+                            it,
+                            AnimationsActivityTransitionsRecycler::class.java
+                        )
+                    )
+                }
+                R.id.navigation_five -> activity?.let {
+                    startActivity(
+                        Intent(
+                            it,
+                            AnimationsActivityTransitionsRecyclerSet::class.java
+                        )
+                    )
+                }
+                R.id.navigation_six -> activity?.let {
+                    startActivity(
+                        Intent(
+                            it,
+                            AnimationsActivityEnlarge::class.java
+                        )
+                    )
+                }
+                R.id.navigation_seven -> activity?.let {
+                    startActivity(
+                        Intent(
+                            it,
+                            AnimationsActivityPath::class.java
+                        )
+                    )
+                }
+
+
             }
             dismiss()
             true

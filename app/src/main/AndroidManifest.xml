@@ -23,6 +23,16 @@
         <activity android:name=".ui.apibottom.ApiBottomActivity"/>
         <activity android:name=".ui.animations.AnimationsActivity"/>
         <activity android:name=".ui.animations.AnimationsActivityBonus"/>
+        <activity android:name=".ui.animations.AnimationsActivityTransitions"/>
+        <activity android:name=".ui.animations.AnimationsActivityTransitionsRecycler"/>
+        <activity android:name=".ui.animations.AnimationsActivityTransitionsRecyclerSet"/>
+        <activity android:name=".ui.animations.AnimationsActivityEnlarge"/>
+        <activity android:name=".ui.animations.AnimationsActivityPath"/>
+
+
+
+
+
 
     </application>
 
