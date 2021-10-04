@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.a_ches.infospace.R
 import com.a_ches.infospace.ui.animations.*
+import com.a_ches.infospace.ui.recycler.RecyclerActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
 
@@ -79,6 +80,14 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                         Intent(
                             it,
                             AnimationsActivityPath::class.java
+                        )
+                    )
+                }
+                R.id.navigation_eight -> activity?.let {
+                    startActivity(
+                        Intent(
+                            it,
+                            RecyclerActivity::class.java
                         )
                     )
                 }

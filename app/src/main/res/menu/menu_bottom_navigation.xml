@@ -32,6 +32,11 @@
         android:id="@+id/navigation_seven"
         android:icon="@drawable/ic_baseline_cached_24"
         android:title="На экран 7" />
+
+    <item
+        android:id="@+id/navigation_eight"
+        android:icon="@drawable/ic_baseline_assignment_24"
+        android:title="На экран 8" />
 </group>
 
 </menu>
