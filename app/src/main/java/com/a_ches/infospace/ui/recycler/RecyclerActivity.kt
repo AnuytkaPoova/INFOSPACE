@@ -1,5 +1,6 @@
 package com.a_ches.infospace.ui.recycler
 
+import android.annotation.SuppressLint
 import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Bundle
@@ -92,6 +93,8 @@ class RecyclerActivityAdapter(
 ) :
     RecyclerView.Adapter<BaseViewHolder>(), ItemTouchHelperAdapter {
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return when (viewType) {
@@ -107,6 +110,8 @@ class RecyclerActivityAdapter(
             )
         }
     }
+
+
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         holder.bind(data[position])
@@ -211,6 +216,7 @@ class RecyclerActivityAdapter(
 
     inner class MarsViewHolder(view: View) : BaseViewHolder(view), ItemTouchHelperViewHolder {
 
+        @SuppressLint("ClickableViewAccessibility")
         override fun bind(dataItem: Pair<Data, Boolean>) {
             itemView.marsImageView.setOnClickListener { onListItemClickListener.onItemClick(dataItem.first) }
             itemView.addItemImageView.setOnClickListener { addItem() }

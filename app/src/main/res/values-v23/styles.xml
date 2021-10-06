@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyTextAppearnace" parent="TextAppearance.AppCompat">
+        <item name="android:hyphenationFrequency">normal</item>
+    </style>
+</resources>

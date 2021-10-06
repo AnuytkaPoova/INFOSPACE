@@ -1,6 +1,7 @@
 package com.a_ches.infospace.ui.picture.ofday
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
@@ -14,14 +15,22 @@ import coil.api.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.a_ches.infospace.R
+import com.a_ches.infospace.databinding.FragmentMainBinding
+import com.a_ches.infospace.databinding.FragmentMainStartBinding
 import com.a_ches.infospace.ui.MainActivity
 import com.a_ches.infospace.ui.api.ApiActivity
 import com.a_ches.infospace.ui.apibottom.ApiBottomActivity
 import com.a_ches.infospace.ui.picture.BottomNavigationDrawerFragment
 import com.a_ches.infospace.ui.settings.SettingsFragment
+import kotlinx.android.synthetic.main.bottom_sheet_layout.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
+
 class PictureOfTheDayFragment : Fragment() {
+
+
+    var _binding: FragmentMainStartBinding? = null
+    val binding get() = _binding!!
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private val viewModel: PictureOfTheDayViewModel by lazy {
@@ -39,19 +48,34 @@ class PictureOfTheDayFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main_start, container, false)
+        //return inflater.inflate(R.layout.fragment_main_start, container, false)
+        _binding = FragmentMainStartBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setbottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
+        setBottomSheetBehavior(binding.bottomSheetContainer.root, BottomSheetBehavior.STATE_COLLAPSED)  // setbottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container)
+        /*activity?.let {
+
+            bottom_sheet_description.typeface = Typeface.createFromAsset(it.assets,"angeles-rough-font.zip")
+        }*/
         input_layout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("https://en.wikipedia.org/wiki/${input_edit_text.text.toString()}")
             })
         }
         setbottomAppBar(view)
+
+        binding.imageView.setOnClickListener {
+            hideOrShowBottomSheet()
+        }
     }
+    /*activity?.let {
+        text_view.typeface = Typeface.createFromAsset(it.assets, "Niceyear.ttf")//
+
+    }*/
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -76,8 +100,12 @@ class PictureOfTheDayFragment : Fragment() {
     private fun renderData(data: PictureOfTheDayData?) {
         when(data) {
             is PictureOfTheDayData.Success -> {
+
+
                 val serverResponseData = data.serverResponseData
+
                 val url = serverResponseData.url
+
                 if (url.isNullOrEmpty()) {
                     //showError("Сообщение, что ссылка пустая")
                     toast("Link is empty")
@@ -87,6 +115,13 @@ class PictureOfTheDayFragment : Fragment() {
                         lifecycle(this@PictureOfTheDayFragment)
                         error(R.drawable.ic_load_error_vector)
                         placeholder(R.drawable.ic_no_photo_vector)
+
+                            //binding.imageDesc.text = "Photo date: ${(data.stateData).date}"
+
+                            //binding.bottomSheetContainer.bottomSheetDescriptionHeader.text = (data.stateData).title
+                            //binding.bottomSheetContainer.bottomSheetDescription.text = (data.stateData).explanation
+                            //binding.bottomSheetContainer.bottomSheetDescriptionHeader.text = ("This lovely starfield spans some four full moons (about 2 degrees) across the heroic northern constellation of Perseus. In telescopic exposures made during the nights of January 24, 26, and 28 it holds the famous pair of open or galactic star clusters h and Chi Persei")
+                            //binding.bottomSheetContainer.bottomSheetDescription.text = (data.stateData).explanation
                     }
                 }
             }
@@ -125,9 +160,23 @@ class PictureOfTheDayFragment : Fragment() {
     }
 
 
-    private fun setbottomSheetBehavior(bottomSheet: ConstraintLayout) {
+    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout, state: Int) { // private fun setbottomSheetBehavior(bottomSheet: ConstraintLayout)
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        bottomSheetBehavior.state = state  //bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+    }
+
+    private fun hideOrShowBottomSheet() {
+        if (bottomSheetBehavior.state != BottomSheetBehavior.STATE_COLLAPSED) {
+            setBottomSheetBehavior(
+                binding.bottomSheetContainer.root,
+                BottomSheetBehavior.STATE_COLLAPSED
+            )
+        } else {
+            setBottomSheetBehavior(
+                binding.bottomSheetContainer.root,
+                BottomSheetBehavior.STATE_HALF_EXPANDED
+            )
+        }
     }
 
     private fun Fragment.toast(string: String?) {
@@ -140,6 +189,11 @@ class PictureOfTheDayFragment : Fragment() {
     companion object {
     fun newInstance() = PictureOfTheDayFragment()
     private var isMain = true
+    }
+
+    override fun onDestroy() {
+        _binding = null
+        super.onDestroy()
     }
 }
 
