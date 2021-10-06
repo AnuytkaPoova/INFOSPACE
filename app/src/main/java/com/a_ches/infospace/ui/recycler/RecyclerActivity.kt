@@ -27,6 +27,7 @@ class RecyclerActivity : AppCompatActivity() {
     private lateinit var adapter: RecyclerActivityAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
         val data = arrayListOf(

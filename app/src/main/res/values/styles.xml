@@ -21,6 +21,10 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
+    <style name="AppTheme.Splash">
+        <item name="android:windowBackground">@drawable/splash_background_drawable</item>
+    </style>
+
 
     <!-- main fragment -->
     <style name="heading_text_style" >
