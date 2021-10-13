@@ -21,6 +21,10 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
+    <style name="AppTheme.Splash">
+        <item name="android:windowBackground">@drawable/splash_background_drawable</item>
+    </style>
+
 
     <!-- main fragment -->
     <style name="heading_text_style" >
@@ -44,6 +48,9 @@
         <item name="android:colorBackground">@color/color_background_white_deep_blue</item>
 
     </style>
+
+
+
 
     <style name="bottom_sheet_text_view_style">
         <item name="android:layout_width">wrap_content</item>

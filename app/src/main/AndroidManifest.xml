@@ -12,15 +12,29 @@
         android:supportsRtl="true"
 
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.api.ApiActivity"/>
         <activity android:name=".ui.apibottom.ApiBottomActivity"/>
+        <activity android:name=".ui.animations.AnimationsActivity"/>
+        <activity android:name=".ui.animations.AnimationsActivityBonus"/>
+        <activity android:name=".ui.animations.AnimationsActivityTransitions"/>
+        <activity android:name=".ui.animations.AnimationsActivityTransitionsRecycler"/>
+        <activity android:name=".ui.animations.AnimationsActivityTransitionsRecyclerSet"/>
+        <activity android:name=".ui.animations.AnimationsActivityEnlarge"/>
+        <activity android:name=".ui.animations.AnimationsActivityPath"/>
+        <activity android:name=".ui.recycler.RecyclerActivity"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
 
     </application>
 
